@@ -1,0 +1,19 @@
+# journal: add journal entries to the file
+# $HOME/journal-file
+
+file=$HOME/journal-file
+
+if [ -w $file ] #if the file exists and is editable, then edit/update it
+then
+date >> $file
+echo "Enter name of person or group: "
+read name
+echo -e "$name" >> $file
+echo >> $file
+cat >> $file
+echo "----------------------------------------------------------------------------" >> $file
+echo >> $file
+else
+echo "Permission denied or file does not exist"
+fi
+
